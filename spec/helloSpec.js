@@ -4,11 +4,16 @@ describe('Hello', function() {
 
   beforeEach(function() {
     hello = new Hello()
-    greeting = 'hello';
   });
 
   it('should say hello', function() {
-    hello.say(greeting);
-    expect(hello.friendlyGreeting).toEqual(greeting);
+    hello.say('hello');
+    expect(hello.friendlyGreeting).toEqual('hello');
+  });
+
+  it('should accept a string', function() {
+    hello.isValidInput('hello');
+    expect(hello.response).toEqual(true);
   });
 });
+
